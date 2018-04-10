@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/genericons/3.0.3/genericons.css'>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 	<style type="text/css">
 		* {
 		  box-sizing: border-box;
@@ -10,7 +10,6 @@
 		}
 
 		.main-navigation {
-		  border-top: 1px solid #ddd;
 		  border-bottom: 1px solid #ddd;
 		  margin: 2em;
 		}
@@ -40,6 +39,10 @@
 		  background: #777;
 		  color: #fff;
 		}
+		.menu .menu-item-has-children .glyphicon-chevron-down{
+		       top:.5rem;
+		       font-size:70%;
+		} 
 
 		@media (min-width: 800px) {
 		  .menu {
@@ -47,11 +50,7 @@
 		    justify-content: space-between;
 		  }
 		}
-		.menu-item-has-children > a:after {
-		  font-family: 'Genericons';
-		  content: '\f431';
-		  padding: 1px;
-		}
+		 
 
 		nav ul ul {
 		  display: none;
@@ -93,13 +92,7 @@
 		    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
 		  }
 
-		  .menu-item-has-children .menu-item-has-children > a:after {
-		    font-family: 'Genericons';
-		    content: '\f431';
-		    padding: 1px;
-		    -webkit-transform: rotate(-90deg);
-		            transform: rotate(-90deg);
-		  }
+		     
 		}
 		</style>
 <body>
@@ -108,7 +101,7 @@
   <ul class="menu">
     <li><a href="/nav1">Nav 1</a></li>
     <li><a href="nav2">Nav 2</a></li>
-    <li class="menu-item-has-children"><a href="#">Nav 3</a>
+    <li class="menu-item-has-children"><a href="#">Nav 3&nbsp;<span class="glyphicon glyphicon-chevron-down"></span></a>
       <ul class="sub-menu">
         <li><a href="/nav3-a">Nav 3 - A</a></li>
         <li><a href="/nav3-b">Nav 3 - B</a>
