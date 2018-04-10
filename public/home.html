@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/genericons/3.0.3/genericons.css'>
+	<style type="text/css">
+		* {
+		  box-sizing: border-box;
+		  font-family: "Dosis", sans-serif;
+		}
+
+		.main-navigation {
+		  border-top: 1px solid #ddd;
+		  border-bottom: 1px solid #ddd;
+		  margin: 2em;
+		}
+
+		ul {
+		  margin: 0;
+		  padding: 0;
+		}
+
+		.menu {
+		  display: flex;
+		  flex-direction: column;
+		}
+		.menu li {
+		  display: block;
+		  list-style-type: none;
+		  text-transform: uppercase;
+		}
+		.menu li a {
+		  display: flex;
+		  text-align: center;
+		  text-decoration: none;
+		  color: #777;
+		  padding: 1rem;
+		}
+		.menu li a:hover {
+		  background: #777;
+		  color: #fff;
+		}
+
+		@media (min-width: 800px) {
+		  .menu {
+		    flex-direction: row;
+		    justify-content: space-between;
+		  }
+		}
+		.menu-item-has-children > a:after {
+		  font-family: 'Genericons';
+		  content: '\f431';
+		  padding: 1px;
+		}
+
+		nav ul ul {
+		  display: none;
+		}
+
+		@media (min-width: 800px) {
+		  nav ul ul {
+		    display: none;
+		    position: absolute;
+		  }
+		}
+		nav ul li.open > ul {
+		  display: block;
+		  color: #fff;
+		  padding-left: 2rem;
+		}
+
+		@media (min-width: 800px) {
+		  nav ul li:hover > ul {
+		    padding-left: 0;
+		    background: #777;
+		  }
+
+		  nav ul li:hover > ul a {
+		    color: #fff;
+		  }
+
+		  .sub-menu li {
+		    display: flex;
+		    padding-right: 2em;
+		  }
+		  .sub-menu li:hover, .sub-menu li a:hover {
+		    background: #ddd;
+		    color: #777;
+		  }
+
+		  nav ul ul ul {
+		    margin: 0 0 0 100%;
+		    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+		  }
+
+		  .menu-item-has-children .menu-item-has-children > a:after {
+		    font-family: 'Genericons';
+		    content: '\f431';
+		    padding: 1px;
+		    -webkit-transform: rotate(-90deg);
+		            transform: rotate(-90deg);
+		  }
+		}
+		</style>
+<body>
+
+<nav class="main-navigation">
+  <ul class="menu">
+    <li><a href="/nav1">Nav 1</a></li>
+    <li><a href="nav2">Nav 2</a></li>
+    <li class="menu-item-has-children"><a href="#">Nav 3</a>
+      <ul class="sub-menu">
+        <li><a href="/nav3-a">Nav 3 - A</a></li>
+        <li><a href="/nav3-b">Nav 3 - B</a>
+        </li>
+        <li><a href="/nav3-c">Nav 3 - C</a></li>
+      </ul>
+    </li>
+    <li><a href="/nav4">Nav 4</a></li>
+    <li><a href="/nav5">nav 5</a></li>
+  </ul>
+</nav>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+$("nav ul li").on('click',function(){
+
+	$(this).removeClass("open").addClass("open");
+});
+
+</script>
+</body> 
+</html>

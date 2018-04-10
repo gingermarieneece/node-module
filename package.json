@@ -1,0 +1,23 @@
+{
+  "name": "node-module",
+  "version": "1.0.0",
+  "description": "node-module",
+  "main": "server.js",
+  "scripts": {
+    "test": "start",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gingermarieneece/node-module.git"
+  },
+  "author": "gingermarieneece",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gingermarieneece/node-module/issues"
+  },
+  "homepage": "https://github.com/gingermarieneece/node-module#readme",
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
+}

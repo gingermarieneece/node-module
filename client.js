@@ -1,0 +1,1 @@
+var nodeModule = require('./getCleanString');
