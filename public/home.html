@@ -3,7 +3,6 @@
 <head>
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 	<style type="text/css">
 		* {
 		  box-sizing: border-box;
@@ -36,19 +35,19 @@
 		  color: #777;
 		  padding: 1rem;
 		}
-		.menu li a:hover {
-		  background: #777;
-		  color: #fff;
-		}
+		
 		.menu .menu-item-has-children .glyphicon-chevron-down{
 		       top:.5rem;
 		       font-size:70%;
 		} 
 
 		@media (min-width: 800px) {
+			.menu li a:hover { 
+				transform: scale(1.1);
+		}
 		  .menu {
 		    flex-direction: row;
-		    justify-content: space-between;
+		    justify-content: space-around;
 		  }
 		}
 		 
@@ -63,7 +62,7 @@
 		    position: absolute;
 		  }
 		}
-		nav ul li:hover > ul {
+		.open > ul {
 		  display: block;
 		  color: #fff;
 		  padding-left: 2rem;
@@ -72,11 +71,9 @@
 		@media (min-width: 800px) {
 		  nav ul li:hover > ul {
 		    padding-left: 0;
-		    background: #777;
 		  }
 
 		  nav ul li:hover > ul a {
-		    color: #fff;
 		  }
 
 		  .sub-menu li {
@@ -84,8 +81,7 @@
 		    padding-right: 2em;
 		  }
 		  .sub-menu li:hover, .sub-menu li a:hover {
-		    background: #ddd;
-		    color: #777;
+		    
 		  }
 
 		  nav ul ul ul {
@@ -105,31 +101,57 @@
 
 <nav class="main-navigation">
   <ul class="menu">
-    <li><a href="/nav1">Nav 1</a></li>
-    <li><a href="nav2">Nav 2</a></li>
-    <li class="menu-item-has-children"><a href="#">Nav 3&nbsp;<span class="glyphicon glyphicon-chevron-down"></span></a>
-      <ul class="sub-menu">
-        <li><a href="/nav3-a">Nav 3 - A</a></li>
-        <li><a href="/nav3-b">Nav 3 - B</a>
-        </li>
-        <li><a href="/nav3-c">Nav 3 - C</a></li>
+    <li><a href="#">Nav A</a>
+    	<ul class="sub-menu">
+        	<li><a href="#">subNav A1</a></li>
+        	<li><a href="#">subNav A2</a></li>
+        	<li><a href="#">subNav A3</a></li>
+        	<li><a href="#">subNav A4</a></li>
       </ul>
     </li>
-    <li><a href="/nav4">Nav 4</a></li>
-    <li><a href="/nav5">nav 5</a></li>
+    <li><a href="#">Nav B</a>
+		<ul class="sub-menu">
+        	<li><a href="#">subNav B1</a></li>
+        	<li><a href="#">subNav B2</a></li>
+        	<li><a href="#">subNav B3</a></li>
+        	<li><a href="#">subNav B4</a></li>
+      	</ul>
+    </li>
+    <li class="menu-item-has-children"><a href="#">Nav C</a>
+      <ul class="sub-menu">
+        	<li><a href="#">subNav C1</a></li>
+        	<li><a href="#">subNav C2</a></li>
+        	<li><a href="#">subNav C3</a></li>
+        	<li><a href="#">subNav C4</a></li>
+      	</ul>
+    </li>
+    <li><a href="#">Nav D</a>
+		<ul class="sub-menu">
+        	<li><a href="#">subNav D1</a></li>
+        	<li><a href="#">subNav D2</a></li>
+        	<li><a href="#">subNav D3</a></li>
+        	<li><a href="#">subNav D4</a></li>
+      	</ul>
+    </li>
   </ul>
 </nav>
-
-<h4 class="title">Home</h4>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
-// $("nav ul li").on('click',function(){
 
-// 	$(this).removeClass("open").addClass("open");
-// });
+$(document).ready(function () {
+   $("nav ul li").on('click',function(){
+        //Toggle the child but don't include them in the hide selector using .not()
+        $('li > ul').not($(this).children("ul").toggle()).hide();
 
+    });
+
+   $(".sub-menu").mouseleave(function() {
+    $(".sub-menu").hide();
+	})
+
+});
 </script>
 </body> 
 </html>
