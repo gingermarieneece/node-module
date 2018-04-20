@@ -1,6 +1,6 @@
 # node-module
 
-To start, enter this command:
+To start express server via command prompt cd to module folder path and enter this command:
 
 node server.js
 
