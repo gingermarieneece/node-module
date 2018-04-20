@@ -19,5 +19,8 @@
   "homepage": "https://github.com/gingermarieneece/node-module#readme",
   "devDependencies": {
     "express": "^4.16.3"
+  },
+  "dependencies": {
+    "http": "0.0.0"
   }
 }

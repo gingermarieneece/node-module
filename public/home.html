@@ -9,7 +9,6 @@
 			font-family: 'Montserrat', sans-serif;
 		}
 		.main-navigation {
-			border-bottom: 1px solid #ddd;
 			margin: 2em;
 		}
 		ul {
@@ -80,8 +79,11 @@
 				margin: 0 0 0 100%;
 				box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
 		    }
+		    .main-navigation {
+				border-bottom: 1px solid #ddd;
+				margin: 2em;
+			}
 		}
-
 	</style>
 </head>
 <body>
@@ -124,20 +126,18 @@
 </nav>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
-
-$(document).ready(function () {
-	$("nav ul li").on('click',function(){
-		//Toggle the child but don't include them in the hide selector using .not()
-		$('li > ul').not($(this).children("ul").toggle()).hide();
+	$(document).ready(function () {
+		$("nav ul li").on('click',function(){
+			//Toggle the child but don't include them in the hide selector using .not()
+			$('li > ul').not($(this).children("ul")).hide();
+	    	$(this).children("ul").slideToggle('slow');
+		});
+		$(".menu").mouseleave(function() {
+			$(".sub-menu").hide();
+		});
 	});
-
-	$(".sub-menu").mouseleave(function() {
-		$(".sub-menu").hide();
-	});
-
-});
-
 </script>
 </body>
 </html>
